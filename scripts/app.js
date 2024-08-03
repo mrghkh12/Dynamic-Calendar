@@ -3,6 +3,8 @@ const $ = document
 
 const monthYearElem = $.getElementById('month-year')
 const daysContainer = $.getElementById('days')
+const prevMonthBtn = $.getElementById('prevBtn')
+const nextMonthBtn = $.getElementById('nextBtn')
 
 const monthsList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -74,5 +76,12 @@ function nextMonthStartDays( year , monthIndex) {
 }
 
 
-
+prevMonthBtn.addEventListener('click' ,  () => {
+    currentDate.setMonth(currentDate.getMonth() - 1)
+    renderCalendar(currentDate)
+})
+nextMonthBtn.addEventListener('click' ,  () => {
+    currentDate.setMonth(currentDate.getMonth() + 1)
+    renderCalendar(currentDate)
+})
 $.addEventListener('DOMContentLoaded' , () => renderCalendar(currentDate) )
