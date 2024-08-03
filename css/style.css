@@ -41,3 +41,30 @@ body{
     cursor: pointer;
 
 }
+
+.calendar .weekDays,
+.calendar .days{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar .weekDays div,
+.calendar .days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.calendar .days div{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.calendar .days div:hover{
+    background-color: #fff;
+    color: orangered;
+}
+
+.calendar .days{
+    height: 240px;
+}

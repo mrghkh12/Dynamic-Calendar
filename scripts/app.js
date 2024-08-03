@@ -24,7 +24,7 @@ function daysElemMaker(year , monthIndex){
 
     daysContainer.innerHTML = ''
 
-    let dayCounter = 0
+    let dayCounter = 1
     while(dayCounter <= lastDay){
         let dayElem = $.createElement('div')
         dayElem.textContent = dayCounter
