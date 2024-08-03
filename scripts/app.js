@@ -24,6 +24,8 @@ function daysElemMaker(year , monthIndex){
 
     daysContainer.innerHTML = ''
 
+    prevMonthLastDay(firstDay, year , monthIndex)
+
     let dayCounter = 1
     while(dayCounter <= lastDay){
         let dayElem = $.createElement('div')
@@ -38,6 +40,21 @@ function daysElemMaker(year , monthIndex){
     }
     console.log(firstDay , lastDay);
     
+}
+
+function prevMonthLastDay(firstDay, year , monthIndex) {
+    const lastMonthDays = new Date(year , monthIndex, 0).getDate()
+    
+    let dayCounter = firstDay
+    while(dayCounter > 0){
+        let dayElem = $.createElement('div')
+        dayElem.textContent = lastMonthDays - (dayCounter - 1)
+        console.log(lastMonthDays - (dayCounter - 1));
+        dayElem.classList.add('fade')
+
+        daysContainer.appendChild(dayElem)
+         dayCounter--
+    }
 }
 
 

@@ -73,3 +73,7 @@ body{
     background-color: orangered;
     color: #fff;
 }
+
+.calendar .days div.fade{
+    color: #555;
+}
