@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Calendar</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/a6243ca7b9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="header">
+        <div id="prevBtn" class="btn">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div id="month-year"></div>
+        <div id="nextBtn" class="btn">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="weekDays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+      <div class="days" id="days"></div>
+    </div>
+
+    <script defer src="./scripts/app.js"></script>
+  </body>
+</html>
