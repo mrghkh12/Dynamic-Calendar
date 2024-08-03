@@ -9,11 +9,34 @@ const monthsList = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 let currentDate = new Date()
 
 
-function renderCalendar(){
-    const year = currentDate.getFullYear()
-    const monthIndex = currentDate.getMonth()
+function renderCalendar(date){
+    const year = date.getFullYear()
+    const monthIndex = date.getMonth()
 
     monthYearElem.textContent = `${monthsList[monthIndex]}${year}`
+
+    daysElemMaker(year , monthIndex)
 }
 
-$.addEventListener('DOMContentLoaded' , renderCalendar)
+function daysElemMaker(year , monthIndex){
+    let firstDay = new Date(year , monthIndex , 1).getDay();
+    let lastDay = new Date(year , monthIndex + 1 , 0).getDate();
+
+    daysContainer.innerHTML = ''
+
+    let dayCounter = 0
+    while(dayCounter <= lastDay){
+        let dayElem = $.createElement('div')
+        dayElem.textContent = dayCounter
+
+
+        daysContainer.appendChild(dayElem)
+         dayCounter++
+    }
+    console.log(firstDay , lastDay);
+    
+}
+
+
+
+$.addEventListener('DOMContentLoaded' , () => renderCalendar(currentDate) )
