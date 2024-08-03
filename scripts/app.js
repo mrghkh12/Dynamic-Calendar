@@ -36,8 +36,11 @@ function daysElemMaker(year , monthIndex){
         }
 
         daysContainer.appendChild(dayElem)
-         dayCounter++
+        dayCounter++
     }
+
+    nextMonthStartDays(year , monthIndex)
+
     console.log(firstDay , lastDay);
     
 }
@@ -49,11 +52,24 @@ function prevMonthLastDay(firstDay, year , monthIndex) {
     while(dayCounter > 0){
         let dayElem = $.createElement('div')
         dayElem.textContent = lastMonthDays - (dayCounter - 1)
-        console.log(lastMonthDays - (dayCounter - 1));
         dayElem.classList.add('fade')
 
         daysContainer.appendChild(dayElem)
-         dayCounter--
+        dayCounter--
+    }
+}
+
+function nextMonthStartDays( year , monthIndex) {
+    const nextMonthDays = 7 - new Date(year , monthIndex + 1, 0).getDate() - 1;
+    
+    let dayCounter = 1
+    while(dayCounter <= nextMonthDays){
+        let dayElem = $.createElement('div')
+        dayElem.textContent = dayCounter
+        dayElem.classList.add('fade')
+
+        daysContainer.appendChild(dayElem)
+        dayCounter++
     }
 }
 
