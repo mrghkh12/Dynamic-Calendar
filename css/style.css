@@ -8,5 +8,36 @@
 }
 
 body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
     background-color: #333;
+}
+
+.calendar{
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #222;
+    overflow: hidden;
+    width: 300px;
+    color: #fff;
+    padding: 20px;
+}
+
+.calendar .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar .header #month-year{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.calendar .header .btn{
+    cursor: pointer;
+
 }
