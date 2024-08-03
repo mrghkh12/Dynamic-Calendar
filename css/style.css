@@ -68,3 +68,8 @@ body{
 .calendar .days{
     height: 240px;
 }
+
+.calendar .days div.today{
+    background-color: orangered;
+    color: #fff;
+}

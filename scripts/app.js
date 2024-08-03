@@ -29,6 +29,9 @@ function daysElemMaker(year , monthIndex){
         let dayElem = $.createElement('div')
         dayElem.textContent = dayCounter
 
+        if(dayCounter === currentDate.getDate()){
+            dayElem.classList.add('today')
+        }
 
         daysContainer.appendChild(dayElem)
          dayCounter++
