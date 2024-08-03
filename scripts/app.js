@@ -21,6 +21,7 @@ function renderCalendar(date){
 }
 
 function daysElemMaker(year , monthIndex){
+    let todayDate = new Date()
     let firstDay = new Date(year , monthIndex , 1).getDay();
     let lastDay = new Date(year , monthIndex + 1 , 0).getDate();
 
@@ -33,7 +34,10 @@ function daysElemMaker(year , monthIndex){
         let dayElem = $.createElement('div')
         dayElem.textContent = dayCounter
 
-        if(dayCounter === currentDate.getDate()){
+        if(dayCounter === todayDate.getDate() &&
+           monthIndex === todayDate.getMonth() &&
+           year === todayDate.getFullYear()){
+            
             dayElem.classList.add('today')
         }
 
@@ -42,8 +46,6 @@ function daysElemMaker(year , monthIndex){
     }
 
     nextMonthStartDays(year , monthIndex)
-
-    console.log(firstDay , lastDay);
     
 }
 
@@ -62,7 +64,7 @@ function prevMonthLastDay(firstDay, year , monthIndex) {
 }
 
 function nextMonthStartDays( year , monthIndex) {
-    const nextMonthDays = 7 - new Date(year , monthIndex + 1, 0).getDate() - 1;
+    const nextMonthDays =7 - new Date(year , monthIndex + 1 , 0).getDay()-1;
     
     let dayCounter = 1
     while(dayCounter <= nextMonthDays){
